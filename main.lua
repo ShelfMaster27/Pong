@@ -136,7 +136,8 @@ end
 ]]
 function love.update(dt)
     if gameState == 'serve' then
-        AI.y = ball.y
+        AI.y = ball.y - 10
+        --AI.dy = 175
         -- before switching to play, initialize ball's velocity based
         -- on player who last scored
         ball.dy = math.random(-50, 50)
@@ -146,7 +147,8 @@ function love.update(dt)
             ball.dx = -math.random(140, 200)
         end
     elseif gameState == 'play' then
-        AI.y = ball.y
+        AI.y = ball.y - 10
+        --AI.dy = 175
         -- detect ball collision with paddles, reversing dx if true and
         -- slightly increasing it, then altering the dy based on the position
         -- at which it collided, then playing a sound effect
